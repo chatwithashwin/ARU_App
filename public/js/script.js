@@ -20,15 +20,7 @@ function Click_SignIn()
   }
   else
   {
-    if(username == "awsuser" && password == "test123")
-    {
-      alert("Success");
-      document.getElementById('Signin').submit();
-    }
-    else
-    {
-      alert("Please enter correct username or password");
-    }
+    location.href = './authenticate?username='+username+'&slug='+password;
 
   }
 
