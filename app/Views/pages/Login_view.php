@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Login Page</title>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'><link rel="stylesheet" href="./css/style.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
+  <link rel="stylesheet" href="./css/style.css">
   <script  src="./js/script.js"></script>
 </head>
 <body style="background-image: url('./images/images1.jpg');">
@@ -27,8 +28,5 @@
   <button onclick="Click_SignIn()">Sign in</button>
   </div>
 </div>
-
-  
-
 </body>
 </html>

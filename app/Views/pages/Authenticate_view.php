@@ -8,22 +8,39 @@
 $username = $_GET["username"];
 $password = $_GET["slug"];
 
-$sql = "select Username from usertable where username = '{$username}' and password = '{$password}' ";
+$sql = "select Username, Usertype from usertable where username = '{$username}' and password = '{$password}' ";
 
 $query = $db->query($sql);
 
 $user = "";
+$type = "";
 
 foreach ($query->getResult() as $row) {
   $user = $row->Username;
+  $type = $row->Usertype;
   
 }
  
 if($user != "")
 {
+  if($type == "ADMIN")
+  {
     echo '<script>alert("Success");</script>';
-    header("Location:./homepage");
+    header("Location:./adminhome");
     exit();
+  }
+  else if($type == "RM")
+  {
+    echo '<script>alert("Success");</script>';
+    header("Location:./rmhome?username={$user}");
+    exit();
+  }
+  else if($type == "CLIENT")
+  {
+    echo '<script>alert("Success");</script>';
+    header("Location:./clienthome?username={$user}");
+    exit();
+  }
 }
 else
 {
