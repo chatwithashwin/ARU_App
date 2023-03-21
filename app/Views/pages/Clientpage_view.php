@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./css/clientpage_css.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script  src="./js/client_js.js"></script>
    </head>
-<body>
+<body onload="dashclick()">
+
+
+<?php $db = db_connect(); 
+
+$posts_sql = "SELECT Title,Description FROM post_table limit 10";
+
+$postquery = $db->query($posts_sql);
+
+?>
   <div class="sidebar">
     <div class="logo-details">
       <i class='bx bx-line-chart'></i>
@@ -14,21 +25,15 @@
     </div>
       <ul class="nav-links">
         <li>
-          <a href="#" class="active">
+          <a href="#clientdashboardview" onclick="dashclick()">
             <i class='bx bx-grid-alt' ></i>
             <span class="links_name">Dashboard</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="#clientinvestmentview" onclick="investmentclick()">
             <i class='bx bx-bar-chart-square' ></i>
-            <span class="links_name">My Investments</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bxs-user-account' ></i>
-            <span class="links_name">Profile Statistics</span>
+            <span class="links_name">Investments Ideas</span>
           </a>
         </li>
         <li>
@@ -37,12 +42,7 @@
             <span class="links_name">Message</span>
           </a>
         </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-cog' ></i>
-            <span class="links_name">Setting</span>
-          </a>
-        </li>
+      
         <li class="log_out">
           <a href="#">
             <i class='bx bx-log-out'></i>
@@ -58,15 +58,16 @@
         <span class="dashboard">Client Portfolio</span>
       </div>
       <div class="search-box">
-        <input type="text" placeholder="Search...">
-        <i class='bx bx-search' ></i>
+        
       </div>
       <div class="profile-details">
-        <img src="./images/clientprofilepic.jpg" alt="">
+      <img src="./images/clientprofilepic.jpg" alt="">
         <span class="admin_name"><?php echo $_GET["username"] ?></span>
         <i class='bx bx-chevron-down' ></i>
       </div>
     </nav>
+    
+    <header id="clientdashboardview">
     <div class="home-content">
       <div class="overview-boxes">
         <div class="box">
@@ -230,6 +231,54 @@
       </div>
       </div>
     </div>
+</header>
+<header id="clientinvestmentview">
+</br>
+</br>
+</br>
+</br>
+
+<!-- <div class="card bg-light text-black">
+ 
+  <div class="card-img-overlay">
+    <h5 class="card-title">10% Equity for Emirates airlines</h5>
+    <p class="card-text">This is a great oppourtunity to buy the equity for one of the best airlines.</p>
+    <p class="card-text">Last updated 3 mins ago</p>
+    <button class="btn btn-primary"> Enquire </button>
+  </div>
+  
+</div> -->
+<?php
+
+
+foreach ($postquery->getResult() as $row) 
+{ 
+$posttitle = $row->Title;
+$postdesc = $row->Description;
+?>
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><?php echo $posttitle ?></h5>
+    <p class="card-text"> <?php echo $postdesc ?> </p>
+    <a href="#" class="btn btn-primary">Enquire</a>
+  </div>
+</div>
+</br>
+<?php } ?>
+
+<!--
+<div class="card bg-light text-black">
+<div class="card-img-overlay">
+    <h5 class="card-title">Stock Investment Deal</h5>
+    <p class="card-text">Wonderful stock investment to buy the shares of the Citicorp</p>
+    <p class="card-text">Last updated 3 mins ago</p>
+    <button class="btn btn-primary"> Enquire </button>
+  </div>
+</div> -->
+
+
+</header>
   </section>
   <script>
    let sidebar = document.querySelector(".sidebar");
@@ -244,4 +293,3 @@ sidebarBtn.onclick = function() {
  </script>
 </body>
 </html>
-
