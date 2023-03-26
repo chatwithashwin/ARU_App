@@ -1,0 +1,11 @@
+CRITICAL - 2023-03-09 13:43:34 --> Undefined array key "username"
+in APPPATH\Views\pages\Adminpage_view.php on line 73.
+ 1 APPPATH\Views\pages\Adminpage_view.php(73): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "username"', 'APPPATH\\Views\\pages\\Adminpage_view.php', 73)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\Adminpage_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('pages/adminpage_view', [], true)
+ 5 APPPATH\Controllers\Adminhome.php(9): view('pages/adminpage_view')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adminhome->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adminhome))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

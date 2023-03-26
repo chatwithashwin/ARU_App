@@ -36,6 +36,12 @@ body {
   .container {
     padding: 0 16px;
   }
+  .container1 {
+    padding: 100px;
+    background-color: white;
+  }
+ 
+  
   
   .container::after, .row::after {
     content: "";
@@ -61,6 +67,15 @@ body {
   
   .button:hover {
     background-color:lightskyblue;
+  }
+
+  .table-view{
+    width: 90%;
+    background: #fff;
+    padding: 20px 30px;
+    margin: 0 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   }
   
   @media screen and (max-width: 650px) {
@@ -253,6 +268,7 @@ nav .profile-details i{
   padding: 0 20px;
   margin-bottom: 26px;
 }
+
 .overview-boxes .box{
   display: flex;
   align-items: center;
@@ -480,3 +496,74 @@ nav .profile-details i{
     width: calc(100% - 60px);
   }
 }
+
+.registerbtn {  
+  background-color: blue;
+  color: white;  
+  padding: 16px 20px;  
+  margin: 8px 0;  
+  border: none;  
+  cursor: pointer;  
+  width: 45%;  
+  opacity: 0.9;  
+  }  
+  .registerbtn:hover {  
+  opacity: 1;  
+  }  
+  
+    @media (max-width: 550px) {
+      .overview-boxes .box{
+        width: 100%;
+        margin-bottom: 15px;
+      }
+      .sidebar.active ~ .home-section nav .profile-details{
+        display: none;
+      }
+    }
+      @media (max-width: 400px) {
+      .sidebar{
+        width: 0;
+      }
+      .sidebar.active{
+        width: 60px;
+      }
+      .home-section{
+        width: 100%;
+        left: 0;
+      }
+      .sidebar.active ~ .home-section{
+        left: 60px;
+        width: calc(100% - 60px);
+      }
+      .home-section nav{
+        width: 100%;
+        left: 0;
+      }
+      .sidebar.active ~ .home-section nav{
+        left: 60px;
+        width: calc(100% - 60px);
+      }
+    }
+    .dash-content .boxes{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+  }
+
+  input[type=text].container1, input[type=password].container1{  
+    width: 100%;  
+    padding: 10px;  
+    margin: 5px 0 22px 0;  
+    display: inline-block;  
+    border: none;  
+    background:white;
+    }  
+    
+    select.container1 {  
+      width:100%; 
+      padding: 10px;  
+    margin: 5px 0 22px 0;  
+     
+      }  
+  

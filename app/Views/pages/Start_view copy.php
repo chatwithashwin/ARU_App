@@ -29,9 +29,11 @@
 			<ul><li><a href="#">HSBC</a></li>
 				<li><a href="#">Webmarketing</a></li>
 			</ul></li>
-			<li><a href="./aboutus">About us</a></li>
-			<li><a href="#">Help</a>
-				<ul><li><a href="./contactus">Contact Us</a></li>
+			<li><a href="#About">About us</a>
+				<ul><li><a href="#">we are here to help you</a></li>
+		    </ul></li>
+			<li><a href="#Help">Help</a>
+				<ul><li><a href="#">Contact Us</a></li>
 			</ul></li>
 
 		</ul>

@@ -2,18 +2,21 @@
 
 namespace App\Controllers;
 
-class Rmhome extends BaseController
+class Deleteinvestment extends BaseController
 {
     public function index()
     {
 
-        if($this->session->sessiondata == "RM")
+        if($this->session->sessiondata == "Admin")
         {
-        return view('pages/rmpage_view');
+        return view('pages/deleteinvestment_view');
         }
         else
         {
         return view('pages/login_view');
+
         }
+
+        
     }
 }

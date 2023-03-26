@@ -2,18 +2,20 @@
 
 namespace App\Controllers;
 
-class Rmhome extends BaseController
+class Addinvestment extends BaseController
 {
     public function index()
     {
 
-        if($this->session->sessiondata == "RM")
+        if($this->session->sessiondata == "Admin")
         {
-        return view('pages/rmpage_view');
+        return view('pages/addinvestment_view');
         }
         else
         {
         return view('pages/login_view');
+
         }
+       
     }
 }

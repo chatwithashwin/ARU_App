@@ -2,18 +2,18 @@
 
 namespace App\Controllers;
 
-class Rmhome extends BaseController
+class Deletepost extends BaseController
 {
     public function index()
     {
 
         if($this->session->sessiondata == "RM")
         {
-        return view('pages/rmpage_view');
+        return view('pages/deletepost_view');
         }
         else
         {
         return view('pages/login_view');
-        }
+        }      
     }
 }

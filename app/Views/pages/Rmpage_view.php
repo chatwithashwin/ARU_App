@@ -12,14 +12,17 @@
    </head>
 <body onload="dashclick()">
 <script  src="./js/rm_js.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <?php $db = db_connect(); 
 
-$clientsql = "SELECT clientid,clientname,emailid,region,networth FROM client_data_table";
-$investsql = "SELECT investmentid,investmentname,investmenttype,risklevel,price,postoption FROM investment_idea_table limit 7";
+$clientsql = "SELECT clientid,clientname,emailid,region,networth,interests FROM client_data_table limit 10";
+$investsql = "SELECT investmentid,investmentname,investmenttype,risklevel,price,postoption FROM investment_idea_table limit 10";
 
 $clientquery = $db->query($clientsql);
 $investquery = $db->query($investsql);
 ?>
+
+
   <div class="sidebar">
     <div class="logo-details">
       <i class='bx bx-line-chart'></i>
@@ -67,8 +70,7 @@ $investquery = $db->query($investsql);
         <span class="dashboard">Relationship Manager</span>
       </div>
       <div class="search-box">
-        <input type="text" placeholder="Search...">
-        <i class='bx bx-search' ></i>
+
       </div>
       <div class="profile-details">
         <img src="./images/clientprofilepic.jpg" alt="">
@@ -178,7 +180,7 @@ $investquery = $db->query($investsql);
                                 <td>1</td>
                                 <td>
                                     <div class="client">
-                                       <div class="client-img bg-img" style="background-image: url(usermales.jpg)"></div>
+                                       <div class="client-img bg-img" style="background-image: url(./images/usermales.jpg)"></div>
                                         <div class="client-info">
                                             <h4>Jacob</h4>
                                             <small>jacob1234@gmail.com</small>
@@ -442,24 +444,24 @@ $investquery = $db->query($investsql);
 	<div class="sales-boxes">
 	<div class="table-view">
 	<div class="search-box">
-        <center><input type="text" placeholder="Search...">
-        <i class='bx bx-search' ></i> 
+        <center><input type="text" id="search2" placeholder="Search...">
+        <i class='bx bx-search' onclick="InvestmentSearch()" ></i> 
 		
 		<!--<button id="filter-button" >--Filter</button>  -->
 <i id="filter-button" class='bx bx-filter' ></i>		</center>
 <div id="filter-container" class="filters">
   <ul class="filters__list">
     <li>
-  <input id="f1" type="checkbox" />
+  <input id="investf1" type="checkbox" value="1" />
     <label for="f1">Investment ID</label>
     </li>
         <li>
-  <input id="f2" type="checkbox" />
-    <label for="f2">Investment Name</label>
+  <input id="investf2" type="checkbox" value="1"/>
+    <label for="f2">Investment Type</label>
     </li>
         <li>
-  <input id="f3" type="checkbox" />
-    <label for="f3">Investment Type</label>
+  <input id="investf3" type="checkbox" value="1" />
+    <label for="f3">Risk Level</label>
     </li>  
   </ul></div>	
       </div> 
@@ -468,7 +470,7 @@ $investquery = $db->query($investsql);
 	<div class="sales-boxes">
 	<div class="table-view" style="overflow-x:auto;">
 	
-<table class="table align-items-center table-flush">
+<table id="investmenttable" class="table align-items-center table-flush">
                 <thead class="thead-light">
                   <tr>
                     <th scope="col">Investment Name</th>
@@ -476,6 +478,7 @@ $investquery = $db->query($investsql);
                     <th scope="col">Investment Type</th>
                     <th scope="col">Risk Level</th>
                     <th scope="col">Investment Price</th>
+                    <th scope="col">Details</th>
                     <th scope="col">Post Option</th>
                   </tr>
                 </thead>
@@ -517,15 +520,18 @@ $investquery = $db->query($investsql);
                       $ <?php echo $investprice  ?>
                     </td>
                     <td>
+                      <a onclick="getInvestmentDetails(this)"> <u>More details</u> </a>
+                    </td>
+                    <td>
                     <?php if($investpost == "1")
                     {
-                      ?> <button class="btn btn-primary">Unpost </button>
+                      ?> <button class="btn btn-primary" onclick="DeletePost(this)">Unpost </button>
                     <?php
                     }
                     else
                     {
                       ?>
-                      <button class="btn btn-primary">Post </button>
+                      <button class="btn btn-primary" onclick="PostInvestment(this)">Post </button>
                     <?php } ?>
                     </td>
                   </tr>
@@ -544,23 +550,23 @@ $investquery = $db->query($investsql);
 	<div class="sales-boxes">
 	<div class="table-view">
 	<div class="search-box">
-        <center><input type="text" placeholder="Search...">
-        <i class='bx bx-search' ></i> 
+        <center><input type="text" id="search1" placeholder="Search...">
+        <i class='bx bx-search'onclick="ClientSearch()" ></i> 
 		
 		<!--<button id="filter-button" >--Filter</button>  -->
-<i id="filter-button" class='bx bx-filter' ></i>		</center>
-<div id="filter-container" class="filters">
+<i id="filter-button1" class='bx bx-filter' ></i>		</center>
+<div id="filter-container1" class="filters">
   <ul class="filters__list">
     <li>
-  <input id="f1" type="checkbox" />
+  <input id="clientf1" type="checkbox" value="1"/>
     <label for="f1">Client ID</label>
     </li>
         <li>
-  <input id="f2" type="checkbox" />
-    <label for="f2">Client Name</label>
+  <input id="clientf2" type="checkbox"value="1"/>
+    <label for="f2">Interests</label>
     </li>
         <li>
-  <input id="f3" type="checkbox" />
+  <input id="clientf3" type="checkbox" value="1"/>
     <label for="f3">Region</label>
     </li>  
   </ul></div>	
@@ -570,7 +576,7 @@ $investquery = $db->query($investsql);
 	<div class="sales-boxes">
 	<div style="overflow:auto;" class="table-view">
 	
-<table class="table align-items-center table-flush">
+<table id="clienttable" class="table align-items-center table-flush">
                 <thead class="thead-light">
                   <tr>
                     <th scope="col">Client Name</th>
@@ -578,6 +584,7 @@ $investquery = $db->query($investsql);
                     <th scope="col">Email ID</th>
                     <th scope="col">Region</th>
                     <th scope="col">Net Worth</th>
+                    <th scope="col">Interests</th>
                     <th scope="col">Contact</th>
                   </tr>
                 </thead>
@@ -592,15 +599,13 @@ $investquery = $db->query($investsql);
                   $emailid = $row->emailid;
                   $region = $row->region;
                   $networth = $row->networth;
-                 
-
- 
+                  $interests = $row->interests;
                   ?>
                   <tr>
                     <th scope="row">
                       <div class="media align-items-center">
-                        <a href="#" class="avatar rounded-circle mr-3">
-                          <img alt="Image placeholder" style="background-image: url(usermales.jpg)" >
+                        <a href="#" class="avatar rounded-square mr-3">
+                          <img style="background-image: url(./images/usermales.jpg)" >
                         </a>
                         <div class="media-body">
                           <span class="mb-0 text-sm"><?php echo  $clientname ?></span>
@@ -620,7 +625,10 @@ $investquery = $db->query($investsql);
                     <td>
                       $ <?php echo  $networth ?>
                     </td>
-                    <td> <button class="btn btn-primary"> Message </td>
+                    <td>
+                      <?php echo  $interests ?>
+                    </td>
+                    <td> <button class="btn btn-primary"> Message </button> </td>
                    
                   </tr>
                   <?php  } ?>
@@ -654,7 +662,28 @@ window.onclick = function () {
   container.classList.remove("filters--active");
 };
 
-console.log(input);
+var button1 = document.getElementById("filter-button1");
+var container1 = document.getElementById("filter-container1");
+
+
+button1.onclick = function (e) {
+  e.stopPropagation();
+  if (container1.classList.contains("filters--active")) {
+    container1.classList.remove("filters--active");
+  } else {
+    container1.classList.add("filters--active");
+  }
+};
+
+container1.onclick = function (e) {
+  e.stopPropagation();
+};
+
+window.onclick = function () {
+  container1.classList.remove("filters--active");
+};
+
+
 
 for (var i = 0; i < input.length; i++) {
   var currentInput = input[i];

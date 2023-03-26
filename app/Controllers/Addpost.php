@@ -2,14 +2,14 @@
 
 namespace App\Controllers;
 
-class Rmhome extends BaseController
+class Addpost extends BaseController
 {
     public function index()
     {
 
         if($this->session->sessiondata == "RM")
         {
-        return view('pages/rmpage_view');
+        return view('pages/addpost_view');
         }
         else
         {

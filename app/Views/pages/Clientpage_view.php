@@ -9,6 +9,15 @@
      <script  src="./js/client_js.js"></script>
    </head>
 <body onload="dashclick()">
+
+
+<?php $db = db_connect(); 
+
+$posts_sql = "SELECT Title,Description,investmentid FROM post_table limit 10";
+
+$postquery = $db->query($posts_sql);
+
+?>
   <div class="sidebar">
     <div class="logo-details">
       <i class='bx bx-line-chart'></i>
@@ -24,13 +33,7 @@
         <li>
           <a href="#clientinvestmentview" onclick="investmentclick()">
             <i class='bx bx-bar-chart-square' ></i>
-            <span class="links_name">My Investments</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bxs-user-account' ></i>
-            <span class="links_name">Profile Statistics</span>
+            <span class="links_name">Investments Ideas</span>
           </a>
         </li>
         <li>
@@ -39,12 +42,7 @@
             <span class="links_name">Message</span>
           </a>
         </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-cog' ></i>
-            <span class="links_name">Setting</span>
-          </a>
-        </li>
+      
         <li class="log_out">
           <a href="#">
             <i class='bx bx-log-out'></i>
@@ -60,8 +58,7 @@
         <span class="dashboard">Client Portfolio</span>
       </div>
       <div class="search-box">
-        <input type="text" placeholder="Search...">
-        <i class='bx bx-search' ></i>
+        
       </div>
       <div class="profile-details">
       <img src="./images/clientprofilepic.jpg" alt="">
@@ -251,32 +248,36 @@
   </div>
   
 </div> -->
+<?php
+
+
+foreach ($postquery->getResult() as $row) 
+{ 
+$posttitle = $row->Title;
+$postdesc = $row->Description;
+$investid = $row->investmentid;
+?>
 
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title">10% Equity for Emirates airlines</h5>
-    <p class="card-text">This is a great oppourtunity to buy the equity for one of the best airlines.</p>
+    <h5 class="card-title"><?php echo $posttitle ?></h5>
+    <p class="card-text"> <?php echo $postdesc ?> </p>
+    </br>
+    </br>
+    <p class="card-text"> Click on Investment ID for more details  </p>
+    <label for="investid">Investment ID: </label>
+    <input type="text" id="investid" name="investid" value="<?php echo $investid ?>" onclick="getInvestmentDetails(this)" readonly>  
+</br>
+</br>
+    
     <a href="#" class="btn btn-primary">Enquire</a>
+    
   </div>
 </div>
 </br>
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Stock Investment Deal</h5>
-    <p class="card-text">Wonderful stock investment to buy the shares of the Citicorp.</p>
-    <a href="#" class="btn btn-primary">Enquire</a>
-  </div>
-</div>
+<?php } ?>
 
-<!--
-<div class="card bg-light text-black">
-<div class="card-img-overlay">
-    <h5 class="card-title">Stock Investment Deal</h5>
-    <p class="card-text">Wonderful stock investment to buy the shares of the Citicorp</p>
-    <p class="card-text">Last updated 3 mins ago</p>
-    <button class="btn btn-primary"> Enquire </button>
-  </div>
-</div> -->
+
 
 
 </header>
