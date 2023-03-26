@@ -2,13 +2,14 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./css/clientpage_css.css">
+    <link rel="stylesheet" href="./css/rmpage_css.css">
+    <link rel="stylesheet" href="./css/rmpage_tables.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <script  src="./js/client_js.js"></script>
+     <script  src="./js/rm_js.js"></script>
    </head>
 <body onload="dashclick()">
+
   <div class="sidebar">
     <div class="logo-details">
       <i class='bx bx-line-chart'></i>
@@ -16,21 +17,21 @@
     </div>
       <ul class="nav-links">
         <li>
-          <a href="#clientdashboardview" onclick="dashclick()">
+          <a href="#dashboardview" onclick="dashclick()" class="active">
             <i class='bx bx-grid-alt' ></i>
             <span class="links_name">Dashboard</span>
           </a>
         </li>
         <li>
-          <a href="#clientinvestmentview" onclick="investmentclick()">
+          <a href="#">
             <i class='bx bx-bar-chart-square' ></i>
-            <span class="links_name">My Investments</span>
+            <span class="links_name">Client Portfolio</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="#investmentview" onclick="investmentclick()">
             <i class='bx bxs-user-account' ></i>
-            <span class="links_name">Profile Statistics</span>
+            <span class="links_name">Investment Repository</span>
           </a>
         </li>
         <li>
@@ -57,21 +58,21 @@
     <nav>
       <div class="sidebar-button">
         <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Client Portfolio</span>
+        <span class="dashboard">Relationship Manager</span>
       </div>
       <div class="search-box">
         <input type="text" placeholder="Search...">
         <i class='bx bx-search' ></i>
       </div>
       <div class="profile-details">
-      <img src="./images/clientprofilepic.jpg" alt="">
+        <img src="./images/clientprofilepic.jpg" alt="">
         <span class="admin_name"><?php echo $_GET["username"] ?></span>
         <i class='bx bx-chevron-down' ></i>
       </div>
     </nav>
-    
-    <header id="clientdashboardview">
-    <div class="home-content">
+
+    <header id="dashboardview">
+    <div  class="home-content">
       <div class="overview-boxes">
         <div class="box">
           <div class="right-side">
@@ -194,28 +195,28 @@
           <ul class="top-sales-details">
             <li>
             <a href="#">
-              <img src="./images/emirates.jpg" alt="">
+              <img src="emirates.jpg" alt="">
               <span class="product">Emirates</span>
             </a>
             <span class="price">د204.98</span>
           </li>
           <li>
             <a href="#">
-               <img src="./images/omanair.png" alt="">
+               <img src="omanair.png" alt="">
               <span class="product">Oman Air</span>
             </a>
             <span class="price">ر.ع.46.52</span>
           </li>
           <li>
             <a href="#">
-               <img src="./images/jp.jpg" alt="">
+               <img src="jp.jpg" alt="">
               <span class="product">JP Morgan</span>
             </a>
             <span class="price">$67.33</span>
           </li>
           <li>
             <a href="#">
-              <img src="./images/micro.jpg" alt="">
+              <img src="micro.jpg" alt="">
               <span class="product">Microsoft</span>
             </a>
             <span class="price">$25.88</span>
@@ -229,59 +230,132 @@
         <br>
         <div class="new-updates">
           <div class="title">Calender</div>
-          <img src="./images/calender1.jpg">
+          <img src="calender1.jpg">
           
       </div>
       </div>
     </div>
-</header>
-<header id="clientinvestmentview">
-</br>
-</br>
-</br>
-</br>
+	</header>
 
-<!-- <div class="card bg-light text-black">
- 
-  <div class="card-img-overlay">
-    <h5 class="card-title">10% Equity for Emirates airlines</h5>
-    <p class="card-text">This is a great oppourtunity to buy the equity for one of the best airlines.</p>
-    <p class="card-text">Last updated 3 mins ago</p>
-    <button class="btn btn-primary"> Enquire </button>
-  </div>
-  
-</div> -->
+  <header id="investmentview">
+	<div class="home-content">
+	
+	<div class="sales-boxes">
+	<div class="table-view">
+	<div class="search-box">
+        <center><input type="text" placeholder="Search...">
+        <i class='bx bx-search' ></i> 
+		
+		<!--<button id="filter-button" >--Filter</button>  -->
+<i id="filter-button" class='bx bx-filter' ></i>		</center>
+<div id="filter-container" class="filters">
+  <ul class="filters__list">
+    <li>
+  <input id="f1" type="checkbox" />
+    <label for="f1">Investment ID</label>
+    </li>
+        <li>
+  <input id="f2" type="checkbox" />
+    <label for="f2">Investment Name</label>
+    </li>
+        <li>
+  <input id="f3" type="checkbox" />
+    <label for="f3">Investment Type</label>
+    </li>  
+  </ul></div>	
+      </div> 
+	</div>
+	</div>
+	<div class="sales-boxes">
+	<div class="table-view">
+	
+<table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Investment Name</th>
+                    <th scope="col">Investment ID</th>
+                    <th scope="col">Investment Type</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Post Option</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <a href="#" class="avatar rounded-circle mr-3">
+                          <img alt="Image placeholder" src="https://raw.githack.com/creativetimofficial/argon-dashboard/master/assets/img/theme/bootstrap.jpg">
+                        </a>
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">Argon Design System</span>
+                        </div>
+                      </div>
+                    </th>
+                    <td>
+                      12377935298
+                    </td>
+                    <td>
+                      Stocks
+                    </td>
+                    <td>
+                      $2,500 USD
+                    </td>
+                    <td>
+                      <button>Post </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+			  </div>
+			  </div>
+	</header>
 
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">10% Equity for Emirates airlines</h5>
-    <p class="card-text">This is a great oppourtunity to buy the equity for one of the best airlines.</p>
-    <a href="#" class="btn btn-primary">Enquire</a>
-  </div>
-</div>
-</br>
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Stock Investment Deal</h5>
-    <p class="card-text">Wonderful stock investment to buy the shares of the Citicorp.</p>
-    <a href="#" class="btn btn-primary">Enquire</a>
-  </div>
-</div>
-
-<!--
-<div class="card bg-light text-black">
-<div class="card-img-overlay">
-    <h5 class="card-title">Stock Investment Deal</h5>
-    <p class="card-text">Wonderful stock investment to buy the shares of the Citicorp</p>
-    <p class="card-text">Last updated 3 mins ago</p>
-    <button class="btn btn-primary"> Enquire </button>
-  </div>
-</div> -->
-
-
-</header>
   </section>
   <script>
+  
+  var button = document.getElementById("filter-button");
+var container = document.getElementById("filter-container");
+var input = document.querySelectorAll("input");
+
+button.onclick = function (e) {
+  e.stopPropagation();
+  if (container.classList.contains("filters--active")) {
+    container.classList.remove("filters--active");
+  } else {
+    container.classList.add("filters--active");
+  }
+};
+
+container.onclick = function (e) {
+  e.stopPropagation();
+};
+
+window.onclick = function () {
+  container.classList.remove("filters--active");
+};
+
+console.log(input);
+
+for (var i = 0; i < input.length; i++) {
+  var currentInput = input[i];
+
+  currentInput.onclick = function () {
+    var isChecked = false;
+    for (var j = 0; j < input.length; j++) {
+      if (input[j].checked) {
+        isChecked = true;
+        break;
+      }
+    }
+
+    if (isChecked) {
+      button.classList.add("button--highlight");
+    } else {
+      button.classList.remove("button--highlight");
+    }
+  };
+}
+
    let sidebar = document.querySelector(".sidebar");
 let sidebarBtn = document.querySelector(".sidebarBtn");
 sidebarBtn.onclick = function() {
@@ -292,5 +366,7 @@ sidebarBtn.onclick = function() {
   sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
 }
  </script>
+
 </body>
 </html>
+
