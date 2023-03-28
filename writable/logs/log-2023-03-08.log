@@ -1,0 +1,43 @@
+CRITICAL - 2023-03-08 17:21:40 --> Undefined property: CodeIgniter\View\View::$db
+in APPPATH\Views\pages\Deleteuser_view.php on line 6.
+ 1 APPPATH\Views\pages\Deleteuser_view.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$db', 'APPPATH\\Views\\pages\\Deleteuser_view.php', 6)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\Deleteuser_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('pages/deleteuser_view', [], true)
+ 5 APPPATH\Controllers\Deleteuser.php(9): view('pages/deleteuser_view')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Deleteuser->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Deleteuser))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-08 17:22:38 --> Undefined property: CodeIgniter\View\View::$db
+in APPPATH\Views\pages\Deleteuser_view.php on line 6.
+ 1 APPPATH\Views\pages\Deleteuser_view.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$db', 'APPPATH\\Views\\pages\\Deleteuser_view.php', 6)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\Deleteuser_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('pages/deleteuser_view', [], true)
+ 5 APPPATH\Controllers\Deleteuser.php(9): view('pages/deleteuser_view')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Deleteuser->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Deleteuser))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-08 17:22:45 --> Undefined property: CodeIgniter\View\View::$db
+in APPPATH\Views\pages\Deleteuser_view.php on line 6.
+ 1 APPPATH\Views\pages\Deleteuser_view.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$db', 'APPPATH\\Views\\pages\\Deleteuser_view.php', 6)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\Deleteuser_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('pages/deleteuser_view', [], true)
+ 5 APPPATH\Controllers\Deleteuser.php(9): view('pages/deleteuser_view')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Deleteuser->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Deleteuser))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-08 17:24:14 --> Call to a member function where() on null
+in APPPATH\Views\pages\Deleteuser_view.php on line 6.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('pages/deleteuser_view', [], true)
+ 4 APPPATH\Controllers\Deleteuser.php(9): view('pages/deleteuser_view')
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Deleteuser->index()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Deleteuser))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
