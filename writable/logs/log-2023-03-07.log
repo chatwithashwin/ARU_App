@@ -1,0 +1,55 @@
+CRITICAL - 2023-03-07 20:44:20 --> Undefined array key "userid"
+in APPPATH\Views\pages\Adduser_view.php on line 6.
+ 1 APPPATH\Views\pages\Adduser_view.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "userid"', 'APPPATH\\Views\\pages\\Adduser_view.php', 6)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\Adduser_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('pages/adduser_view', [], true)
+ 5 APPPATH\Controllers\Adduser.php(9): view('pages/adduser_view')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adduser->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adduser))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-07 20:44:43 --> Undefined array key "userid"
+in APPPATH\Views\pages\Adduser_view.php on line 6.
+ 1 APPPATH\Views\pages\Adduser_view.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "userid"', 'APPPATH\\Views\\pages\\Adduser_view.php', 6)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\Adduser_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('pages/adduser_view', [], true)
+ 5 APPPATH\Controllers\Adduser.php(9): view('pages/adduser_view')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adduser->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adduser))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-07 20:46:41 --> Undefined array key "userid"
+in APPPATH\Views\pages\Adduser_view.php on line 6.
+ 1 APPPATH\Views\pages\Adduser_view.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "userid"', 'APPPATH\\Views\\pages\\Adduser_view.php', 6)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\Adduser_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('pages/adduser_view', [], true)
+ 5 APPPATH\Controllers\Adduser.php(9): view('pages/adduser_view')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adduser->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adduser))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-07 20:47:22 --> Undefined array key "type"
+in APPPATH\Views\pages\Adduser_view.php on line 11.
+ 1 APPPATH\Views\pages\Adduser_view.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "type"', 'APPPATH\\Views\\pages\\Adduser_view.php', 11)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\Adduser_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('pages/adduser_view', [], true)
+ 5 APPPATH\Controllers\Adduser.php(9): view('pages/adduser_view')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adduser->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adduser))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-07 20:47:47 --> Undefined variable $userid
+in APPPATH\Views\pages\Adduser_view.php on line 27.
+ 1 APPPATH\Views\pages\Adduser_view.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userid', 'APPPATH\\Views\\pages\\Adduser_view.php', 27)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\Adduser_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('pages/adduser_view', [], true)
+ 5 APPPATH\Controllers\Adduser.php(9): view('pages/adduser_view')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adduser->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adduser))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

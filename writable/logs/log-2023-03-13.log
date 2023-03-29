@@ -1,0 +1,33 @@
+CRITICAL - 2023-03-13 12:27:08 --> Undefined array key "investid"
+in APPPATH\Views\pages\Addinvestment1_view.php on line 8.
+ 1 APPPATH\Views\pages\Addinvestment1_view.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "investid"', 'APPPATH\\Views\\pages\\Addinvestment1_view.php', 8)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\Addinvestment1_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('pages/addinvestment1_view', [], true)
+ 5 APPPATH\Controllers\Addinvestment1.php(9): view('pages/addinvestment1_view')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Addinvestment1->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Addinvestment1))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-13 12:28:48 --> Undefined array key "investname"
+in APPPATH\Views\pages\Addinvestment1_view.php on line 9.
+ 1 APPPATH\Views\pages\Addinvestment1_view.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "investname"', 'APPPATH\\Views\\pages\\Addinvestment1_view.php', 9)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\Addinvestment1_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('pages/addinvestment1_view', [], true)
+ 5 APPPATH\Controllers\Addinvestment1.php(9): view('pages/addinvestment1_view')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Addinvestment1->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Addinvestment1))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-13 12:36:40 --> Undefined array key "username"
+in APPPATH\Views\pages\Adminpage_view.php on line 79.
+ 1 APPPATH\Views\pages\Adminpage_view.php(79): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "username"', 'APPPATH\\Views\\pages\\Adminpage_view.php', 79)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\Adminpage_view.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('pages/adminpage_view', [], true)
+ 5 APPPATH\Controllers\Adminhome.php(9): view('pages/adminpage_view')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adminhome->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adminhome))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
