@@ -26,8 +26,7 @@ if($user != "")
   if($type == "ADMIN")
   {
     echo '<script>alert("Success");</script>';
-   // header("Location:./adminhome?username={$user}");
-   header("Location:./sessionhandle?username={$user}&type={$type}");
+    header("Location:./adminhome");
     exit();
   }
   else if($type == "RM")
